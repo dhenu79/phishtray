@@ -33,3 +33,7 @@ class LegacyUser(models.Model):
     email_update = models.DateTimeField(blank=True, null=True)
     created = models.DateTimeField(blank=True, null=True)
     modified = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'users'
