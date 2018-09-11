@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styled, { css } from 'react-emotion';
 import format from 'date-fns/format';
 import Markdown from 'react-remarkable';
+import { Link } from 'react-router-dom';
 
 import EmailCard from './EmailCard';
 
@@ -21,8 +22,8 @@ const ActionLink = styled('a')({
 
 function AttachmentLink({ attachment }) {
   return (
-    <a
-      href="#"
+    <Link
+      to="/files"
       className={css({
         marginRight: 20,
         textDecoration: 'none',
@@ -31,7 +32,7 @@ function AttachmentLink({ attachment }) {
       })}
     >
       > {attachment.filename}
-    </a>
+    </Link>
   );
 }
 
