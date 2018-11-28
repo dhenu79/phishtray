@@ -22,10 +22,10 @@ phases:
 #      - docker pull mysql:5.7
 #      - docker tag mysql:5.7 $aws_account_id.dkr.ecr.eu-west-2.amazonaws.com/phishtray/db:latest
 #      - docker push $aws_account_id.dkr.ecr.eu-west-2.amazonaws.com/phishtray/db:latest
-#      - docker build .
-#      - docker tag centos:7 $aws_account_id.dkr.ecr.eu-west-2.amazonaws.com/phishtray/django:latest
-#      - docker push $aws_account_id.dkr.ecr.eu-west-2.amazonaws.com/phishtray/django:latest
-#      - docker image ls
+      - docker build -f ./prod.Dockerfile
+      - docker tag centos:7 $aws_account_id.dkr.ecr.eu-west-2.amazonaws.com/phishtray/django:latest
+      - docker push $aws_account_id.dkr.ecr.eu-west-2.amazonaws.com/phishtray/django:latest
+      - docker image ls
 #      - aws ecs register-task-definition --cli-input-json file://taskdefinition.json --family devPhishtray
       - ecs-cli compose service up --cluster devPhishtray
 #      - ecs-cli ps
