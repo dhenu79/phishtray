@@ -1,0 +1,37 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo INSTALLING ECS_CLI
+      - sudo curl -o /usr/local/bin/ecs-cli https://s3.amazonaws.com/amazon-ecs-cli/ecs-cli-linux-amd64-latest
+      - sudo chmod +x /usr/local/bin/ecs-cli
+      - ecs-cli -v
+      - ecs-cli configure --cluster $cluster_name --default-launch-type FARGATE --region $aws_default_region --config-name $config_name
+      - ecs-cli configure profile --profile-name $profile_name --access-key $aws_access_key_id --secret-key $aws_secret_access_key
+      - DATETIME=$(date +%d%m%y__%H%M)
+      - VERSION="$(git log --pretty=format:'%h' -n 1) $(date +%d:%m:%Y*****%H:%M)"
+      - echo $VERSION
+      - echo CONFIGURING ECS-CLI
+      - echo lets see one last time !!!!!!
+
+  pre_build:
+    commands:
+      - echo Logging.. in to Amazon ECR ....
+      - eval $(aws ecr get-login --region $aws_default_region --no-include-email)
+#      - docker pull mysql:5.7
+#      - docker tag mysql:5.7 $aws_account_id.dkr.ecr.eu-west-2.amazonaws.com/phishtray/db:latest
+#      - docker push $aws_account_id.dkr.ecr.eu-west-2.amazonaws.com/phishtray/db:latest
+#      - docker build .
+#      - docker tag centos:7 $aws_account_id.dkr.ecr.eu-west-2.amazonaws.com/phishtray/django:latest
+#      - docker push $aws_account_id.dkr.ecr.eu-west-2.amazonaws.com/phishtray/django:latest
+#      - docker image ls
+#      - aws ecs register-task-definition --cli-input-json file://taskdefinition.json --family devPhishtray
+      - ecs-cli compose service up --cluster devPhishtray
+#      - ecs-cli ps
+
+  build:
+    commands:
+#      - make django-run
+  post_build:
+    commands:

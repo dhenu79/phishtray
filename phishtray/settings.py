@@ -86,7 +86,11 @@ DATABASES = {
         'NAME': 'phishtray',
         'USER': 'root',
         'PASSWORD': 'admin',
+<<<<<<< HEAD
         'HOST': DATABASE_HOST,
+=======
+        'HOST': 'db',
+>>>>>>> NOTICKET - init
         'PORT': '3306',
     }
 }

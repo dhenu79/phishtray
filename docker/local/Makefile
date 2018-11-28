@@ -1,13 +1,14 @@
 .PHONY: clean
 clean:
 	- docker-compose kill
+# - ecs-cli compose down
 	- docker-compose rm
 	- rm -rf db
 
 .PHONY: stop
 stop:
 	docker-compose stop
-
+#ecs-cli compose stop
 
 # DEV COMMANDS
 # ==================================================
@@ -24,7 +25,6 @@ django-test:
 	docker-compose exec django bash -c "python3.6 /usr/src/app/manage.py test"
 # ==================================================
 
-
 # SSH COMMANDS (to debug via ssh)
 # ==================================================
 .PHONY: django-debug
@@ -36,7 +36,6 @@ django-debug:
 django-ssh:
 	ssh -p9022 root@phishtray.local -t 'cd /usr/src/app; bash -l'
 # ==================================================
-
 
 # MIGRATION COMMANDS
 # ==================================================
