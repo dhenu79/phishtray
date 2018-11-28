@@ -1,28 +1,20 @@
-version: '3'
+version: '2'
 
 services:
 
   db:
-#    build: mysql/ .
-    image: $aws_account_id.dkr.ecr.$aws_default_region.amazonaws.com/phishtray/db:latest
+    image: mysql:5.7
     volumes:
-    - /var/lib/mysql
+    - ./db:/var/lib/mysql
     ports:
-    - "3306:3306"
+    - "9306:3306"
     environment:
     - MYSQL_ROOT_PASSWORD=admin
     - MYSQL_DATABASE=phishtray
     networks:
     - webnet
-    logging:
-      driver: awslogs
-      options:
-        awslogs-group: /ecs/devPhishtray
-        awslogs-region: eu-west-2
-        awslogs-stream-prefix: ecs
 
   django:
-<<<<<<< HEAD:docker/local/docker-compose.yml
     build:
       context: ../..
       dockerfile: local.Dockerfile
@@ -34,28 +26,10 @@ services:
     - DATABASE_HOST=db
     volumes:
     - ../../.:/usr/src/app
-=======
-#    build: .
-    image: $aws_account_id.dkr.ecr.$aws_default_region.amazonaws.com/phishtray/django:latest
-#    command:
-#      - python3.6 manage.py makemigrations
-#      - python3.6 manage.py migrate
-    ports:
-    - "9000:9000"
-    - "22:22"
-    volumes:
-    - /usr/src/app
->>>>>>> NOTICKET - init:docker-compose.yml
     networks:
     - webnet
     depends_on:
     - db
-    logging:
-      driver: awslogs
-      options:
-        awslogs-group: /ecs/devPhishtray
-        awslogs-region: eu-west-2
-        awslogs-stream-prefix: ecs
 
 networks:
   webnet:
