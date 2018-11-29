@@ -33,7 +33,7 @@ services:
     logging:
       driver: awslogs
       options:
-        awslogs-group: /ecs/PT
+        awslogs-group: /ecs/devPhishtray
         awslogs-region: eu-west-2
         awslogs-stream-prefix: ecs
 
