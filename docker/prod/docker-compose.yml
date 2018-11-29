@@ -18,7 +18,7 @@ services:
       options:
         awslogs-group: /ecs/prod
         awslogs-region: eu-west-2
-        awslogs-stream-prefix: ecs
+#        awslogs-stream-prefix: ecs
 
   phishtray_apps:
     image: $aws_account_id.dkr.ecr.$aws_default_region.amazonaws.com/phishtray/django:latest
@@ -35,7 +35,7 @@ services:
       options:
         awslogs-group: /ecs/prod
         awslogs-region: eu-west-2
-        awslogs-stream-prefix: ecs
+#        awslogs-stream-prefix: ecs
 
 networks:
   webnet:
