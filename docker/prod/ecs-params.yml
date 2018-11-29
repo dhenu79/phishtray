@@ -8,10 +8,10 @@ task_definition:
     mem_limit: 10GB
   services:
     phishtray_db:
-      cpu_shares: 2 vcpu
+      cpu_shares: "2 vcpu"
       mem_limit: 4GB
     phishtray_apps:
-      cpu_shares: 2 vcpu
+      cpu_shares: "2 vcpu"
       mem_limit: 4GB
 run_params:
   network_configuration:
