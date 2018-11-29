@@ -7,7 +7,7 @@
       "logConfiguration": {
         "logDriver": "awslogs",
         "options": {
-          "awslogs-group": "/ecs/devPhishtray",
+          "awslogs-group": "/ecs/devPhishtray/DB",
           "awslogs-region": "eu-west-2",
           "awslogs-stream-prefix": "ecs"
         }
@@ -65,7 +65,7 @@
       "logConfiguration": {
         "logDriver": "awslogs",
         "options": {
-          "awslogs-group": "/ecs/devPhishtray",
+          "awslogs-group": "/ecs/devPhishtray/DJANGO",
           "awslogs-region": "eu-west-2",
           "awslogs-stream-prefix": "ecs"
         }
