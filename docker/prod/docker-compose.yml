@@ -16,9 +16,9 @@ services:
     logging:
       driver: awslogs
       options:
-        awslogs-group: /ecs/devPhishtray/db
+        awslogs-group: /ecs/devPhishtray
         awslogs-region: eu-west-2
-        awslogs-stream-prefix: ecs
+        awslogs-stream-prefix: ecs/db
 
   phishtray_apps:
     image: $aws_account_id.dkr.ecr.$aws_default_region.amazonaws.com/phishtray/django:latest1
@@ -33,9 +33,9 @@ services:
     logging:
       driver: awslogs
       options:
-        awslogs-group: /ecs/devPhishtray/django
+        awslogs-group: /ecs/devPhishtray
         awslogs-region: eu-west-2
-        awslogs-stream-prefix: ecs
+        awslogs-stream-prefix: ecs/django
 
 networks:
   webnet:
