@@ -16,7 +16,7 @@ services:
     logging:
       driver: awslogs
       options:
-        awslogs-group: /ecs/dev-FG-Phishtray
+        awslogs-group: newLG
         awslogs-region: eu-west-2
         awslogs-stream-prefix: db
 
@@ -33,7 +33,7 @@ services:
     logging:
       driver: awslogs
       options:
-        awslogs-group: /ecs/dev-FG-Phishtray
+        awslogs-group: newLG
         awslogs-region: eu-west-2
         awslogs-stream-prefix: django
 
