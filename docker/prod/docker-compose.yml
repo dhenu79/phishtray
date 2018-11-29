@@ -16,7 +16,7 @@ services:
     logging:
       driver: awslogs
       options:
-        awslogs-group: /ecs/devPhishtray
+        awslogs-group: /ecs/devPhishtray/DB
         awslogs-region: eu-west-2
         awslogs-stream-prefix: ecs/db
 
@@ -33,7 +33,7 @@ services:
     logging:
       driver: awslogs
       options:
-        awslogs-group: /ecs/devPhishtray
+        awslogs-group: /ecs/devPhishtray/DJANGO
         awslogs-region: eu-west-2
         awslogs-stream-prefix: ecs/django
 
