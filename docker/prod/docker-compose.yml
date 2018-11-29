@@ -3,6 +3,12 @@ version: '3'
 services:
 
   phishtray_db:
+    logging:
+      driver: awslogs
+      options:
+        awslogs-group: newLG
+        awslogs-region: eu-west-2
+        awslogs-stream-prefix: db
     image: $aws_account_id.dkr.ecr.$aws_default_region.amazonaws.com/phishtray/db:latest
     volumes:
     - /var/lib/mysql
@@ -13,14 +19,15 @@ services:
     - MYSQL_DATABASE=phishtray
     networks:
     - webnet
+
+
+  phishtray_apps:
     logging:
       driver: awslogs
       options:
         awslogs-group: newLG
         awslogs-region: eu-west-2
-        awslogs-stream-prefix: db
-
-  phishtray_apps:
+        awslogs-stream-prefix: django
     image: $aws_account_id.dkr.ecr.$aws_default_region.amazonaws.com/phishtray/django:latest
     ports:
     - "9000:9000"
@@ -30,12 +37,7 @@ services:
     - webnet
     depends_on:
     - phishtray_db
-    logging:
-      driver: awslogs
-      options:
-        awslogs-group: newLG
-        awslogs-region: eu-west-2
-        awslogs-stream-prefix: django
+
 
 networks:
   webnet:
