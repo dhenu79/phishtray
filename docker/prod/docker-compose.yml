@@ -16,7 +16,7 @@ services:
     logging:
       driver: awslogs
       options:
-        awslogs-group: /ecs/devPhishtray
+        awslogs-group: /ecs/prod
         awslogs-region: eu-west-2
         awslogs-stream-prefix: ecs/phishtray_db
 
@@ -33,7 +33,7 @@ services:
     logging:
       driver: awslogs
       options:
-        awslogs-group: /ecs/devPhishtray
+        awslogs-group: /ecs/prod
         awslogs-region: eu-west-2
         awslogs-stream-prefix: ecs/phishtray_apps
 
