@@ -7,9 +7,9 @@
       "logConfiguration": {
         "logDriver": "awslogs",
         "options": {
-          "awslogs-group": "/ecs/devPhishtray/DB",
+          "awslogs-group": "/ecs/dev-FG-Phishtray",
           "awslogs-region": "eu-west-2",
-          "awslogs-stream-prefix": "ecs"
+          "awslogs-stream-prefix": "db"
         }
       },
       "entryPoint": null,
