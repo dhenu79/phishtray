@@ -53,5 +53,5 @@ RUN pip3.6 install -r requirements.txt
 
 WORKDIR /usr/src/app
 
-CMD ["python3.6 manage.py makemigrations", "python3.6 manage.py migrate"]
-ENTRYPOINT exec python3.6 /usr/src/app/manage.py runserver 0:9000
+#CMD ["python3.6 manage.py makemigrations", "python3.6 manage.py migrate"]
+#ENTRYPOINT exec python3.6 /usr/src/app/manage.py runserver 0:9000
