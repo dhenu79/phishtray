@@ -20,7 +20,6 @@ services:
     networks:
     - webnet
 
-
   phishtray_apps:
     logging:
       driver: awslogs

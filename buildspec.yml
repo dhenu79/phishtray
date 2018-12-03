@@ -28,7 +28,7 @@ phases:
       # - docker image ls
       - cd docker/prod
 #      - aws ecs register-task-definition --cli-input-json file://taskdefinition.json --family devPhishtray
-      - ecs-cli compose service up --cluster dev-FG-Phishtray
+      - ecs-cli compose service up --cluster newDEVPhishtray
 #      - ecs-cli ps
 
   build:
