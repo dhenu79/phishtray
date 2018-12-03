@@ -4,7 +4,7 @@ services:
     logging:
       driver: awslogs
       options:
-        awslogs-group: newLG
+        awslogs-group: newEC2_LG
         awslogs-region: eu-west-2
         awslogs-stream-prefix: db
     image: $aws_account_id.dkr.ecr.$aws_default_region.amazonaws.com/phishtray/db:latest
@@ -22,14 +22,18 @@ services:
     logging:
       driver: awslogs
       options:
-        awslogs-group: newLG
+        awslogs-group: newEC2_LG
         awslogs-region: eu-west-2
         awslogs-stream-prefix: django
     image: $aws_account_id.dkr.ecr.$aws_default_region.amazonaws.com/phishtray/django:latest
     ports:
     - "9000:9000"
     environment:
-    - DATABASE_HOST=phishtray_db
+    - DB_HOST=phishtray_db
+    - DB_PORT=3306
+    - DB_NAME=phishtray
+    - DB_USER=user_1
+    - DB_PASSWORD=user_password_1
     networks:
     - webnet
     depends_on:
