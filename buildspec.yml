@@ -27,6 +27,7 @@ phases:
       - docker push $aws_account_id.dkr.ecr.eu-west-2.amazonaws.com/phishtray/django:latest
       # - docker image ls
       - cd docker/prod
+      - ecs-cli logs
 #      - aws ecs register-task-definition --cli-input-json file://taskdefinition.json --family devPhishtray
       - ecs-cli compose service up --cluster newDEVPhishtray
 #      - ecs-cli ps
