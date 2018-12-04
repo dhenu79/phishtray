@@ -19,26 +19,26 @@ services:
   #   - webnet
 
   phishtray_apps:
-    logging:
-      driver: awslogs
-      options:
-        awslogs-group: newEC2_LG
-        awslogs-region: eu-west-2
-        awslogs-stream-prefix: django
+    # logging:
+    #   driver: awslogs
+    #   options:
+    #     awslogs-group: newEC2_LG
+    #     awslogs-region: eu-west-2
+    #     awslogs-stream-prefix: django
     image: $aws_account_id.dkr.ecr.$aws_default_region.amazonaws.com/phishtray/django:latest
     ports:
     - "9000:9000"
     environment:
-    - DB_HOST=phishtray_db
-    - DB_PORT=3306
-    - DB_NAME=phishtray
-    - DB_USER=user_1
-    - DB_PASSWORD=user_password_1
+    - DB_HOST=${DB_HOST}
+    - DB_PORT=${DB_PORT}
+    - DB_NAME=${DB_NAME}
+    - DB_USER=${DB_USER}
+    - DB_PASSWORD=${DB_PASSWORD}
     # networks:
     # - webnet
     # depends_on:
     # - phishtray_db
 
-# 
+#
 # networks:
 #   webnet:
