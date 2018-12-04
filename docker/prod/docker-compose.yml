@@ -36,8 +36,8 @@ services:
     - DB_PASSWORD=user_password_1
     networks:
     - webnet
-    depends_on:
-    - phishtray_db
+    # depends_on:
+    # - phishtray_db
 
 
 networks:
