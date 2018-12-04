@@ -35,4 +35,5 @@ phases:
       - docker push $aws_account_id.dkr.ecr.eu-west-2.amazonaws.com/phishtray/django:latest
   post_build:
     commands:
-      - ecs-cli compose service up --file ./docker/prod/docker-compose.yml --cluster newDEVPhishtray
+      - cd ./docker/prod
+      - ecs-cli compose service up --cluster newDEVPhishtray
