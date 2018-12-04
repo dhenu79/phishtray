@@ -30,9 +30,9 @@ phases:
   build:
     commands:
 #      - make django-run
-      - docker build -f prod.Dockerfile .
-      - docker tag centos:7 $aws_account_id.dkr.ecr.eu-west-2.amazonaws.com/phishtray/django:latest
+      - docker build -t cybsafe/phishtray:latest -f prod.Dockerfile .
+      - docker tag cybsafe/phishtray:latest $aws_account_id.dkr.ecr.eu-west-2.amazonaws.com/phishtray/django:latest
       - docker push $aws_account_id.dkr.ecr.eu-west-2.amazonaws.com/phishtray/django:latest
   post_build:
     commands:
-      - ecs-cli compose service up --cluster newDEVPhishtray
+#      - ecs-cli compose service up --file ./docker/prod/docker-compose.yml --cluster newDEVPhishtray
