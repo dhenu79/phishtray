@@ -1,6 +1,6 @@
 version: 1
 task_definition:
-#  ecs_network_mode: bridge
+  ecs_network_mode: bridge
   # task_role_arn: arn:aws:iam::$aws_account_id:role/ecsServiceRole
   # task_execution_role: arn:aws:iam::$aws_account_id:role/ecsTaskExecutionRole
   # task_size:
