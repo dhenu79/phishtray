@@ -30,9 +30,9 @@ phases:
   build:
     commands:
 #      - make django-run
-      - docker build -t cybsafe/phishtray:latest -f prod.Dockerfile .
-      - docker tag cybsafe/phishtray:latest $aws_account_id.dkr.ecr.eu-west-2.amazonaws.com/phishtray/django:latest
-      - docker push $aws_account_id.dkr.ecr.eu-west-2.amazonaws.com/phishtray/django:latest
+      # - docker build -t cybsafe/phishtray:latest -f prod.Dockerfile .
+      # - docker tag cybsafe/phishtray:latest $aws_account_id.dkr.ecr.eu-west-2.amazonaws.com/phishtray/django:latest
+      # - docker push $aws_account_id.dkr.ecr.eu-west-2.amazonaws.com/phishtray/django:latest
   post_build:
     commands:
       - cd ./docker/prod
