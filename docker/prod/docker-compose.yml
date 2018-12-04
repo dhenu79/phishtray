@@ -1,22 +1,22 @@
 version: '3'
 services:
-  phishtray_db:
-    logging:
-      driver: awslogs
-      options:
-        awslogs-group: newEC2_LG
-        awslogs-region: eu-west-2
-        awslogs-stream-prefix: db
-    image: $aws_account_id.dkr.ecr.$aws_default_region.amazonaws.com/phishtray/db:latest
-    volumes:
-    - /var/lib/mysql
-    ports:
-    - "3306:3306"
-    environment:
-    - MYSQL_ROOT_PASSWORD=admin
-    - MYSQL_DATABASE=phishtray
-    networks:
-    - webnet
+  # phishtray_db:
+  #   logging:
+  #     driver: awslogs
+  #     options:
+  #       awslogs-group: newEC2_LG
+  #       awslogs-region: eu-west-2
+  #       awslogs-stream-prefix: db
+  #   image: $aws_account_id.dkr.ecr.$aws_default_region.amazonaws.com/phishtray/db:latest
+  #   volumes:
+  #   - /var/lib/mysql
+  #   ports:
+  #   - "3306:3306"
+  #   environment:
+  #   - MYSQL_ROOT_PASSWORD=admin
+  #   - MYSQL_DATABASE=phishtray
+  #   networks:
+  #   - webnet
 
   phishtray_apps:
     logging:
