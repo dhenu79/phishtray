@@ -34,11 +34,11 @@ services:
     - DB_NAME=phishtray
     - DB_USER=user_1
     - DB_PASSWORD=user_password_1
-    networks:
-    - webnet
+    # networks:
+    # - webnet
     # depends_on:
     # - phishtray_db
 
-
-networks:
-  webnet:
+# 
+# networks:
+#   webnet:
