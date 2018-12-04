@@ -7,9 +7,6 @@ task_definition:
     cpu_limit: 1024
     mem_limit: 1GB
   services:
-    # phishtray_db:
-    #   cpu_shares: 1024
-    #  mem_limit: 1GB
     phishtray_apps:
-      cpu_shares: 1GB
+      cpu_shares: 1024
       mem_limit: 1GB
