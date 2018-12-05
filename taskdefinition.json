@@ -1,6 +1,6 @@
 {
   "ipcMode": null,
-  "executionRoleArn": "arn:aws:iam::058736653260:role/ecsTaskExecutionRole",
+  "executionRoleArn": "arn:aws:iam::$aws_account_id:role/ecsTaskExecutionRole",
   "containerDefinitions": [
     {
       "dnsSearchDomains": null,
@@ -15,7 +15,7 @@
       "entryPoint": [],
       "portMappings": [
         {
-          "hostPort": 9000,
+          "hostPort": 0,
           "protocol": "tcp",
           "containerPort": 9000
         }
@@ -24,27 +24,27 @@
         "tail -f requirements.txt"
       ],
       "linuxParameters": null,
-      "cpu": 1024,
+      "cpu": 256,
       "environment": [
         {
           "name": "DB_HOST",
-          "value": "dbphishtray.cefm2xxnen8a.eu-west-2.rds.amazonaws.com"
+          "value": "$DB_HOST"
         },
         {
           "name": "DB_NAME",
-          "value": "phishtray"
+          "value": "$DB_NAME"
         },
         {
           "name": "DB_PASSWORD",
-          "value": "phishtray1"
+          "value": "$DB_PASSWORD"
         },
         {
           "name": "DB_PORT",
-          "value": "3306"
+          "value": "$DB_PORT"
         },
         {
           "name": "DB_USER",
-          "value": "phishtray"
+          "value": "$DB_USER"
         }
       ],
       "ulimits": null,
@@ -54,9 +54,9 @@
       "secrets": null,
       "dockerSecurityOptions": null,
       "memory": null,
-      "memoryReservation": 1024,
+      "memoryReservation": 300,
       "volumesFrom": [],
-      "image": "058736653260.dkr.ecr.eu-west-2.amazonaws.com/phishtray/django:latest",
+      "image": "$aws_account_id.dkr.ecr.eu-west-2.amazonaws.com/phishtray/django:latest",
       "disableNetworking": null,
       "interactive": null,
       "healthCheck": null,
@@ -74,12 +74,12 @@
     }
   ],
   "placementConstraints": [],
-  "memory": "2048",
-  "taskRoleArn": "arn:aws:iam::058736653260:role/ecsTaskExecutionRole",
+  "memory": null,
+  "taskRoleArn": "arn:aws:iam::$aws_account_id:role/ecsTaskExecutionRole",
   "compatibilities": [
     "EC2"
   ],
-  "taskDefinitionArn": "arn:aws:ecs:eu-west-2:058736653260:task-definition/newPhishtrayDevTASK:12",
+  "taskDefinitionArn": "arn:aws:ecs:eu-west-2:$aws_account_id:task-definition/newPhishtrayDevTASK:12",
   "family": "newPhishtrayDevTASK",
   "requiresAttributes": [
     {
@@ -142,7 +142,7 @@
     "EC2"
   ],
   "networkMode": "bridge",
-  "cpu": "2048",
+  "cpu": null,
   "revision": 12,
   "status": "ACTIVE",
   "volumes": []
