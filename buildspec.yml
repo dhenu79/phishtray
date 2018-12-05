@@ -13,7 +13,7 @@ phases:
       - VERSION="$(git log --pretty=format:'%h' -n 1) $(date +%d:%m:%Y*****%H:%M)"
       - echo $VERSION
       - echo CONFIGURING ECS-CLI
-      - echo lets see one last time !!!!
+      - echo lets see one last time !!!!!!!
 
   pre_build:
     commands:
