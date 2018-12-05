@@ -1,17 +1,25 @@
 version: 1
 task_definition:
-#   ecs_network_mode: awsvpc
-  # task_role_arn: arn:aws:iam::$aws_account_id:role/ecsServiceRole
-  # task_execution_role: arn:aws:iam::$aws_account_id:role/ecsTaskExecutionRole
-  # task_size:
-  #   cpu_limit: 1024
-  #   mem_limit: 1GB
   services:
     phishtray_apps:
       cpu_shares: 256
       mem_limit: 0.5GB
       mem_reservation: 0.5GB
 
+
+# version: 1
+# task_definition:
+#    ecs_network_mode: awsvpc
+#    task_execution_role: arn:aws:iam::$aws_account_id:role/ecsTaskExecutionRole
+#    task_size:
+#      cpu_limit: 1024
+#      mem_limit: 1GB
+  # services:
+  #   phishtray_apps:
+  #     cpu_shares: 256
+  #     mem_limit: 0.5GB
+  #     mem_reservation: 0.5GB
+  # task_role_arn: arn:aws:iam::$aws_account_id:role/ecsServiceRole
 # version: 1
 # task_definition:
   # ecs_network_mode: awsvpc
