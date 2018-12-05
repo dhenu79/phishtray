@@ -28,4 +28,4 @@ phases:
   post_build:
     commands:
      - cd ./docker/prod
-     - ecs-cli compose service up --cluster newDEVPhishtray
+     - ecs-cli compose up --cluster newDEVPhishtray
