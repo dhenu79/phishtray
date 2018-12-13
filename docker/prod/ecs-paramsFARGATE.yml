@@ -4,7 +4,7 @@ task_definition:
   task_execution_role: arn:aws:iam::$aws_account_id:role/ecsTaskExecutionRole
   ecs_network_mode: awsvpc
   task_size:
-    mem_limit: 0.5GB
+    mem_limit: 512
     cpu_limit: 256
   # services:
     # phishtray_db:
