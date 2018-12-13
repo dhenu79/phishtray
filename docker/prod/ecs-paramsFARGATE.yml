@@ -5,7 +5,7 @@ task_definition:
   task_execution_role: arn:aws:iam::$aws_account_id:role/ecsTaskExecutionRole
   task_size:
     cpu_limit: 1 vcpu
-    mem_limit: 1GB
+    mem_limit: 0.5GB
   # services:
     # phishtray_db:
     #   cpu_shares: 2048
