@@ -17,8 +17,8 @@ run_params:
   network_configuration:
     awsvpc_configuration:
       subnets:
-        - $private_subnet_1
-        - $private_subnet_2
+        - $Dev-101-Subnet1
+        - $Dev-101-Subnet2
       security_groups:
         - $fargate_sg
       assign_public_ip: ENABLED
