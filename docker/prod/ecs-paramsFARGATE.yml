@@ -4,15 +4,15 @@ task_definition:
 #  task_role_arn: arn:aws:iam::$aws_account_id:role/Dev-Phishtray-Pipeline-ECSRole-eu-west-2
   task_execution_role: arn:aws:iam::$aws_account_id:role/ecsTaskExecutionRole
   task_size:
-    cpu_limit: 4 vcpu
-    mem_limit: 10GB
+    cpu_limit: 1 vcpu
+    mem_limit: 1GB
   services:
-    phishtray_db:
-      cpu_shares: 2048
-      mem_limit: 4GB
+    # phishtray_db:
+    #   cpu_shares: 2048
+    #   mem_limit: 4GB
     phishtray_apps:
-      cpu_shares: 2048
-      mem_limit: 4GB
+      cpu_shares: 256
+      mem_limit: 0.5GB
 run_params:
   network_configuration:
     awsvpc_configuration:
