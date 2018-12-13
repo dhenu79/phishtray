@@ -1,18 +1,10 @@
 version: 1
 task_definition:
-#  task_role_arn: arn:aws:iam::$aws_account_id:role/Dev-Phishtray-Pipeline-ECSRole-eu-west-2
   task_execution_role: arn:aws:iam::$aws_account_id:role/ecsTaskExecutionRole
   ecs_network_mode: awsvpc
   task_size:
-    mem_limit: 512
+    mem_limit: 1024
     cpu_limit: 512
-  # services:
-    # phishtray_db:
-    #   cpu_shares: 2048
-    #   mem_limit: 4GB
-    # phishtray_apps:
-    #   cpu_shares: 256
-    #   mem_limit: 0.5GB
 run_params:
   network_configuration:
     awsvpc_configuration:
