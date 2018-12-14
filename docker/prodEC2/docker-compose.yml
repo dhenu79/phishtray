@@ -3,7 +3,7 @@ services:
   phishtray_apps:
     image: $aws_account_id.dkr.ecr.$aws_default_region.amazonaws.com/phishtray/django:newlatest
     ports:
-      - "0:9000"
+      - "9000:9000"
     environment:
       - DB_HOST=${DB_HOST}
       - DB_PORT=${DB_PORT}
