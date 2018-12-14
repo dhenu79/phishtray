@@ -50,7 +50,6 @@ phases:
 
 
 #FOR FARGATE
-     - cd ./docker/prod
-     - ecs-cli compose --project-name djangoFARGATE --file docker-compose.yml --ecs-params ecs-paramsFARGATE.yml --region $aws_default_region create --launch-type FARGATE
-     - cd ~
-     - ecs-cli compose up --region $aws_default_region --cluster Dev-Phishtray-101 --launch-type FARGATE
+     - cd ./docker/prodEC2
+     - ecs-cli compose --project-name dev-201 --file docker-compose.yml --ecs-params ecs-paramsEC2.yml --region $aws_default_region create --launch-type EC2
+     - ecs-cli compose up --region $aws_default_region --cluster dev-201 --launch-type EC2
