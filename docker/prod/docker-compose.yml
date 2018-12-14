@@ -1,4 +1,4 @@
-version: '2'
+version: '3'
 services:
   phishtray_apps:
     image: $aws_account_id.dkr.ecr.$aws_default_region.amazonaws.com/phishtray/django:newlatest
