@@ -1,0 +1,29 @@
+Prerequisites
+
+Must have in place before CD pipeline: resources in the SAME AWS Region
+
+1. Git =  Dockerfile + Source
+2. ECR =  Dockerfile and application source.
+=====
+3. MUST - Task Definition: refering Docker image in ECR. For more information, see Creating a Task Definition in the Amazon Elastic Container Service Developer Guide.
+granted by the Amazon ECS Container Instance IAM role.
+
+Roles
+ecsInstanceRole:
+ecsTaskExecutionRole:
+
+Memory and vCPU for the container:
+  Instance type
+
+=====
+4. Amazon ECS cluster that is running a service:
+=====
+An Amazon ECS cluster that is running a service that uses your previously mentioned task definition. For more information, see Creating a Cluster and Creating a Service in the Amazon Elastic Container Service Developer Guide.
+
+HELLO JUST ADDED TO SEE IF THIS REPLICATES
+
+
+NOTE:
+  https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html
+  Task execution iam role for paramsFARGATE
+  ecsInstanceRole = for EC2 launch type

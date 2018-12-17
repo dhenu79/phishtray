@@ -33,3 +33,4 @@ COPY . /usr/src/app
 
 # TODO: Update to use a proper web server like gunicorn or uwsgi
 ENTRYPOINT exec bash -c "python3.6 manage.py migrate && python3.6 manage.py runserver 0:9000"
+#ENTRYPOINT exec bash -c "tail -f /dev/null"

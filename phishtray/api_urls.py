@@ -5,7 +5,7 @@ from exercise.views import (
     ExerciseEmailViewSet,
     ExerciseEmailThreadViewSet,
     ExerciseReportViewSet,
-    
+
 )
 
 from participant.views import (ParticipantViewSet, ParticipantScoreViewSet)
